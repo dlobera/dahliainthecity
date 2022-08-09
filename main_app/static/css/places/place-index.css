@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .card {
@@ -38,5 +39,5 @@
 }
 
 .citysc {
-  max-width: 30px;
+  max-width: 250px;
 }

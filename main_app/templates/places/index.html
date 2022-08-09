@@ -5,7 +5,7 @@
 <link 
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/cats/place-index.css' %}"
+  href="{% static 'css/places/place-index.css' %}"
 />
 {% endblock %}
 
@@ -16,17 +16,17 @@
   <img src="{% static 'images/bp.png' %}" alt="A boarding pass" />
 </section>
 
+{% for place in places %}
 <section class="card-container">
-  {% for place in places %}
-    <div class="card">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            class="citysc"
-            src="{% static 'images/cityscape.png' %}" 
-            alt="A cityscape"
-          >
-        </div>
+  <div class="card">
+    <div class="card-content">
+      <div class="card-img-container">
+        <img 
+        class="citysc"
+        src="{% static 'images/cityscape.png' %}" 
+        alt="A cityscape"
+        >
+      </div>
         <h2 class="card-title">{{ place.name }}</h2>
     </div>
   {% endfor %}
