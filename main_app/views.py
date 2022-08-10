@@ -1,5 +1,6 @@
 from unicodedata import name
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 from .models import Place
 from django.http import HttpResponse
 
@@ -33,3 +34,8 @@ def home(request):
 def places_detail(request, place_id):
   place = Place.objects.get(id=place_id)
   return render(request, 'places/detail.html', { 'place': place })
+
+class PlaceCreate(CreateView):
+  model = Place
+  fields = '__all__'
+  success_url = '/cats/'

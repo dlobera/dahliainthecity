@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <h1>Add a Place</h1>
+  <img src="{% static 'images/place.jpeg' %}" alt="Places Youll go"/>
+</div>
+{% comment %} 
+
+{% endcomment %}
+<form action="" method="post" class="form-container">
+  {% comment %} 
+
+  {% endcomment %}
+  {% csrf_token %}
+  <table>
+    {% comment %}
+  
+    {% endcomment %}
+    {{ form.as_table }}
+  </table>
+  <button type="submit" class="btn submit">Submit!</button>
+</form>
+
+{% endblock %}
