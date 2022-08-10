@@ -62,14 +62,11 @@
       class="subsection-content"
     >
       {% csrf_token %}
-      {{ visit_form.as_p }}
-      <button type="submit" class="btn submit">Add Visit</button>
-    </form>
-      {% csrf_token %}
       {{ visiting_form.as_p }}
-      <button type="submit" class="btn submit">Add Visit</button>
+      <button type="submit" class="btn submit">Add</button>
     </form>
     <h3>Past Visits</h3>
+    {% if place.visit_set.all.count %}
     <table>
       <thead>
         <tr><th>Date</th><th>Visit</th></tr>
@@ -83,6 +80,11 @@
         {% endfor %}
       </tbody>
     </table>
+    {% else %}
+			<div class="subsection-content">
+        <p>Buy a plane ticket to {{place.name}}!!!</p>
+      </div>
+    {% endif %}
   </section>
 </div>
 
