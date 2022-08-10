@@ -7,8 +7,14 @@
 
 {% block content %}
 
+
 <div class="page-header">
+  {% if object %}
+  <h1>Edit {{place.name}}</h1>
+  {% else %}
   <h1>Add a Place</h1>
+  {% endif %}
+  {% comment %} <h1>Add a Place</h1> {% endcomment %}
   <img src="{% static 'images/place.jpeg' %}" alt="Places Youll go"/>
 </div>
 {% comment %} 
@@ -21,7 +27,7 @@
   {% csrf_token %}
   <table>
     {% comment %}
-  
+
     {% endcomment %}
     {{ form.as_table }}
   </table>

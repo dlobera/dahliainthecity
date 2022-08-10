@@ -19,7 +19,8 @@
     >
   </div>
   <div class="place-details">
-    <h1>{{ place.name }}</h1>
+    <h1>Things to do in {{ place.name }}!!</h1>
+    <hr>
     {% comment %} {% if cat.age > 0 %}
       <h2>A {{ cat.age }} year old {{ cat.breed }}</h2>
     {% else %}
@@ -28,6 +29,11 @@
     <ul>
       <li>{{ place.todo }}</li>
     </ul>
+    <br>
+    <div class="cat-actions">
+      <a href="{% url 'places_update' place.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'places_delete' place.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
 

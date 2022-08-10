@@ -18,3 +18,8 @@ class Place(models.Model):
 
   def get_absolute_url(self):
     return reverse('places_detail', kwargs={'place_id': self.id})
+
+# Add new Feeding model below Cat model
+class Visit(models.Model):
+  date = models.DateField()
+  meal = models.CharField(max_length=1)

@@ -1,6 +1,6 @@
 from unicodedata import name
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Place
 from django.http import HttpResponse
 
@@ -38,4 +38,12 @@ def places_detail(request, place_id):
 class PlaceCreate(CreateView):
   model = Place
   fields = '__all__'
-  success_url = '/cats/'
+  success_url = '/places/'
+
+class PlaceUpdate(UpdateView):
+  model = Place
+  fields = ['todo']
+
+class PlaceDelete(DeleteView):
+  model = Place
+  success_url = '/places/'
