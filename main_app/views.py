@@ -1,5 +1,5 @@
 from unicodedata import name
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Place
 from .forms import VisitForm
@@ -38,6 +38,14 @@ def places_detail(request, place_id):
   return render(request, 'places/detail.html', { 
     'place': place, 'visiting_form': visiting_form
   })
+
+def add_visit(request, place_id):
+  form = VisitForm(request.POST)
+  if form.is_valid():
+    new_visit = form.save(commit=False)
+    new_visit.place_id = place_id
+    new_visit.save()
+  return redirect('places_detail', place_id=place_id)
 
 class PlaceCreate(CreateView):
   model = Place
