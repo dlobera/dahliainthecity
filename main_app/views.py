@@ -2,6 +2,7 @@ from unicodedata import name
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Place
+from .forms import VisitForm
 from django.http import HttpResponse
 
 # class Place: 
@@ -33,7 +34,10 @@ def home(request):
 
 def places_detail(request, place_id):
   place = Place.objects.get(id=place_id)
-  return render(request, 'places/detail.html', { 'place': place })
+  visiting_form = VisitForm()
+  return render(request, 'places/detail.html', { 
+    'place': place, 'visiting_form': visiting_form
+  })
 
 class PlaceCreate(CreateView):
   model = Place
