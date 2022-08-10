@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/places/place-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="place-container">
+  <div class="place-img">
+    <img 
+      src="{% static 'images/todo.gif' %}" 
+      alt="TODO"
+    >
+  </div>
+  <div class="place-details">
+    <h1>{{ place.name }}</h1>
+    {% comment %} {% if cat.age > 0 %}
+      <h2>A {{ cat.age }} year old {{ cat.breed }}</h2>
+    {% else %}
+      <h2>A {{ cat.breed }} kitten.</h2>
+    {% endif %} {% endcomment %}
+    <ul>
+      <li>{{ place.todo }}</li>
+    </ul>
+  </div>
+</section>
+
+{% endblock %}
