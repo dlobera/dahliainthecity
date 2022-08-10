@@ -1,3 +1,6 @@
+import environ
+env = environ.Env()
+environ.Env.read_env()
 """
 Django settings for dahliainthecity project.
 
@@ -12,6 +15,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,9 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-(ccsm5$@@5c4aco59yiiq4001$bhdd6a&fsu5$8$cp2@w@egy1'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG') == 'True' 
 
 ALLOWED_HOSTS = []
 
@@ -127,3 +132,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())
+
+DEBUG_PROPAGATE_EXCEPTIONS = True
