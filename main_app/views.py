@@ -10,19 +10,6 @@ from .forms import VisitForm
 from django.http import HttpResponse
 from django.contrib.auth.views import LoginView
 
-# class Place: 
-#   def __init__(self, name):
-#     self.name = name
-
-# places = [
-#   Place('Austin, TX'),
-#   Place('New York, NY'),
-#   Place('Boston, MA'),
-#   Place('Nashville, TN'),
-#   Place('Portland, OR'),
-# ]
-
-
 # Create your views here.
 class Home(LoginView):
   template_name = 'home.html'
@@ -34,9 +21,6 @@ def about(request):
 def places_index(request):
   places = Place.objects.filter(user=request.user)
   return render(request, 'places/index.html', { 'places': places })
-
-# def home(request):
-#   return render(request, 'home.html')
 
 @login_required
 def places_detail(request, place_id):
