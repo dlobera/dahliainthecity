@@ -2,6 +2,11 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.urls import reverse
 
+VISITED = (
+  ('1', 'Visited'),
+  ('2', 'Not Visited'),
+)
+
 # Create your models here.
 class Place(models.Model):
   name = models.CharField(max_length=100)
@@ -19,7 +24,15 @@ class Place(models.Model):
   def get_absolute_url(self):
     return reverse('places_detail', kwargs={'place_id': self.id})
 
-# Add new Feeding model below Cat model
 class Visit(models.Model):
   date = models.DateField()
-  meal = models.CharField(max_length=1)
+  visited = models.CharField(
+    max_length=1,
+    choices=VISITED,
+    default=VISITED[0][0]
+  )
+
+  place = models.ForeignKey(Place, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.get_visited_display()} on {self.date}"
