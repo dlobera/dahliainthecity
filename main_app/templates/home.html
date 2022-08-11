@@ -8,13 +8,7 @@
 {% block content %}
 
 <section class="logo-container">
-  <div class="place-container">
-    {% comment %} <img src="{% static 'images/cityscape.png' %}" alt="City Scape" /> {% endcomment %}
-  </div>
-  <img 
-    {% comment %} src="{% static 'images/logotype.svg' %}"  {% endcomment %}
-    alt="Text reads: Dahlia In the City"
-  />
+  <img class="tiny" src="{% static 'images/inthe.png' %}" alt="in the city logo" />
 </section>
 {% if not user.is_authenticated %}
 <section>

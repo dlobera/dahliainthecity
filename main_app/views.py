@@ -61,7 +61,7 @@ class PlaceCreate(LoginRequiredMixin, CreateView):
 
 class PlaceUpdate(LoginRequiredMixin, UpdateView):
   model = Place
-  fields = ['todo']
+  fields = ['name']
 
 class PlaceDelete(LoginRequiredMixin, DeleteView):
   model = Place

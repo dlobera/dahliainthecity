@@ -46,7 +46,6 @@
             <br>
             <button type="submit" class="btn submit">Add</button>
           </form>
-            {% comment %} <form action="{% url 'add' %}" method="POST" role="form"> {% endcomment %}
 
             </form>
           </th></tr>
@@ -54,8 +53,13 @@
         <tbody>
           {% for doing in place.doing_set.all %}
             <tr>
-              <td>{{doing.todo}}</td>
-              <td>{{doing.get_todo_display}}</td>
+              {% if doing.complete %}
+                <td>✔️{{doing.todo}}</td>
+                {% comment %} <td>✔️{{doing.get_todo_display}}</td> {% endcomment %}
+              {% else %}
+                <td>{{doing.todo}}</td>
+                {% comment %} <td>{{doing.get_todo_display}}</td> {% endcomment %}
+              {% endif %}
             </tr>
           {% endfor %}
         </tbody>
@@ -80,7 +84,7 @@
     >
       {% csrf_token %}
       {{ visiting_form.as_p }}
-      <button type="submit" class="btn-submit">Add</button>
+      <button type="submit" class="btn">Add</button>
     </form>
     <h3>Past Visits</h3>
     {% if place.visit_set.all.count %}

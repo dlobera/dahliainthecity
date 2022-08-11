@@ -26,14 +26,14 @@ body {
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
     'Helvetica Neue', sans-serif;
   min-height: 100vh;
-  --nav-bg: rgba(24, 50, 64, 0.7);
-  --nav-bg-ff: rgba(16, 29, 35, 0.9);
-  --borders: rgb(36, 116, 248) solid 2px;
-  --text-color: rgb(17, 20, 17);
-  --link-hover-color: rgb(16, 56, 158);
+  --nav-bg: #6dc5dd;
+  --nav-bg-ff: #6dc5dd;
+  --borders: #10819f solid 2px;
+  --text-color: #FFFFFF;
+  --link-hover-color:#10819f;
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);
-  --submit: rgb(26, 128, 0);
+  --submit: #10819f solid 2px;
   --warn: rgb(255, 102, 0);
   --danger: rgb(220, 20, 30);
   --secondary: rgb(57, 57, 57);
@@ -161,6 +161,11 @@ nav li {
 
 .page-content {
   font-size: var(--font-reg);
+}
+
+.tinypic {
+  max-width: 150px;
+  margin-left: 30px;
 }
 
 @media only screen and (min-width: 768px) {
