@@ -11,11 +11,6 @@
 }
 
 .card-container section {
-  /* width: 275px; */
-  /* margin: 10px; */
-  /* border: var(--borders); */
-  /* background-color: gray; */
-  /* box-shadow: var(--card-box-shadow); */
   background-color: aqua;
   
 }
@@ -25,7 +20,7 @@
   width: 255px;
   margin: 10px;
   border: var(--borders);
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(253, 253, 253, 0.65);
   border-radius: 10px;
 }
 
