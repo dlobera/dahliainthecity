@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Place
-from .forms import VisitForm
+from .forms import VisitForm, DoingForm
 from django.http import HttpResponse
 from django.contrib.auth.views import LoginView
 
@@ -26,9 +26,12 @@ def places_index(request):
 def places_detail(request, place_id):
   place = Place.objects.get(id=place_id)
   visiting_form = VisitForm()
+  todo_form = DoingForm()
+  # todo_list = DoingForm.objects.order_by('id')
   return render(request, 'places/detail.html', { 
-    'place': place, 'visiting_form': visiting_form
+    'place': place, 'visiting_form': visiting_form, 'todo_form': todo_form
   })
+  
 
 @login_required
 def add_visit(request, place_id):
@@ -37,6 +40,15 @@ def add_visit(request, place_id):
     new_visit = form.save(commit=False)
     new_visit.place_id = place_id
     new_visit.save()
+  return redirect('places_detail', place_id=place_id)
+
+@login_required
+def add_todo(request, place_id):
+  form = DoingForm(request.POST)
+  if form.is_valid():
+    new_todo = form.save(commit=False)
+    new_todo.place_id = place_id
+    new_todo.save()
   return redirect('places_detail', place_id=place_id)
 
 class PlaceCreate(LoginRequiredMixin, CreateView):

@@ -9,11 +9,11 @@
 
 <section class="logo-container">
   <div class="place-container">
-    <img src="{% static 'images/cityscape.png' %}" alt="City Scape" />
+    {% comment %} <img src="{% static 'images/cityscape.png' %}" alt="City Scape" /> {% endcomment %}
   </div>
   <img 
-    src="{% static 'images/logotype.svg' %}" 
-    alt="Text reads: Cat Collector"
+    {% comment %} src="{% static 'images/logotype.svg' %}"  {% endcomment %}
+    alt="Text reads: Dahlia In the City"
   />
 </section>
 {% if not user.is_authenticated %}

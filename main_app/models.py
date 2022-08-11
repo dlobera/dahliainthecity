@@ -11,13 +11,6 @@ VISITED = (
 # Create your models here.
 class Place(models.Model):
   name = models.CharField(max_length=100)
-  todo = ArrayField(
-      ArrayField(
-            models.CharField(max_length=10, blank=True),
-            size=20,
-        ),
-        size=20,
-    )
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
@@ -40,3 +33,11 @@ class Visit(models.Model):
   class Meta:
     ordering = ['-date']
 
+class Doing(models.Model):
+  todo = models.CharField(max_length=100)
+  complete = models.BooleanField(default=False)
+
+  place = models.ForeignKey(Place, on_delete=models.CASCADE)
+  def __str__(self):
+    return self.todo
+  

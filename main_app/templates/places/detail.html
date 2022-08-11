@@ -28,22 +28,38 @@
       alt="TODO"
     >
   </div>
-  <div class="place-details">
-    <h1>Things to do in {{ place.name }}!!</h1>
-    <hr>
-    {% comment %} {% if cat.age > 0 %}
-      <h2>A {{ cat.age }} year old {{ cat.breed }}</h2>
-    {% else %}
-      <h2>A {{ cat.breed }} kitten.</h2>
-    {% endif %} {% endcomment %}
-    <ul>
-      <li>{{ place.todo }}</li>
-    </ul>
-    <br>
-    <div class="cat-actions">
-      <a href="{% url 'places_update' place.id %}" class="btn warn">Edit</a>
-      <a href="{% url 'places_delete' place.id %}" class="btn danger">Delete</a>
-    </div>
+  <div class="feedings-toy-container">
+    <section class="feedings">
+      <div class="subsection-title">
+        <h1>Things to do in {{ place.name }}!!</h1>
+      </div>
+      <table>
+        <thead>
+          <tr><th>
+            <form
+            action="{% url 'add_todo' place.id %}" 
+            method="post" 
+            class="subsection-content"
+          >
+            {% csrf_token %}
+            {{ todo_form.as_p }}
+            <button type="submit" class="btn submit">Add</button>
+          </form>
+            {% comment %} <form action="{% url 'add' %}" method="POST" role="form"> {% endcomment %}
+
+            </form>
+          </th></tr>
+        </thead>
+        <tbody>
+          {% for doing in place.doing_set.all %}
+            <tr>
+              <td>{{doing.todo}}</td>
+              <td>{{doing.get_todo_display}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>   
   </div>
 </section>
 <div class="visits-container">
@@ -86,6 +102,11 @@
       </div>
     {% endif %}
   </section>
+</div>
+
+<div class="button-actions">
+  <a href="{% url 'places_update' place.id %}" class="btn warn">Edit</a>
+  <a href="{% url 'places_delete' place.id %}" class="btn danger">Delete</a>
 </div>
 
 {% endblock %}
