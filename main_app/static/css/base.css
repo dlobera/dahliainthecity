@@ -26,8 +26,8 @@ body {
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
     'Helvetica Neue', sans-serif;
   min-height: 100vh;
-  --nav-bg: rgba(104, 197, 248, .7);
-  --nav-bg-ff: rgba(104, 197, 248, .9);
+  --nav-bg: rgba(24, 50, 64, 0.7);
+  --nav-bg-ff: rgba(16, 29, 35, 0.9);
   --borders: rgb(36, 116, 248) solid 2px;
   --text-color: rgb(17, 20, 17);
   --link-hover-color: rgb(16, 56, 158);
@@ -44,7 +44,8 @@ body {
   --font-l: 1.8rem;
   --font-reg: 1.6rem;
   --card-border-radius: 6px;
-  background-color: darkslategrey;
+  background-image: url(../images/cityscape.png);
+  background-size: cover;
 }
 
 header {
@@ -254,6 +255,14 @@ nav li {
     padding-top: 6px;
     width: 256px;
     height: 35px;
+  }
+
+  .temp {
+    margin-left: 50px;
+    position: relative;
+    top: -15px;
+    text-decoration: none;
+    color: black;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {

@@ -28,8 +28,8 @@
       alt="TODO"
     >
   </div>
-  <div class="feedings-toy-container">
-    <section class="feedings">
+  <div class="todos-container">
+    <section class="todos">
       <div class="subsection-title">
         <h1>Things to do in {{ place.name }}!!</h1>
       </div>
@@ -43,6 +43,7 @@
           >
             {% csrf_token %}
             {{ todo_form.as_p }}
+            <br>
             <button type="submit" class="btn submit">Add</button>
           </form>
             {% comment %} <form action="{% url 'add' %}" method="POST" role="form"> {% endcomment %}
@@ -79,7 +80,7 @@
     >
       {% csrf_token %}
       {{ visiting_form.as_p }}
-      <button type="submit" class="btn submit">Add</button>
+      <button type="submit" class="btn-submit">Add</button>
     </form>
     <h3>Past Visits</h3>
     {% if place.visit_set.all.count %}

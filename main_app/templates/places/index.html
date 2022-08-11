@@ -13,22 +13,17 @@
 
 <section class="page-header">
   <h1>Places To See</h1>
-  <img src="{% static 'images/bp.png' %}" alt="A boarding pass" />
+  <img src="{% static 'images/eyes.png' %}" alt="A boarding pass" />
 </section>
 
-{% for place in places %}
 <section class="card-container">
   <div class="card">
+    {% for place in places %}
     <a href="{% url 'places_detail' place.id %}">
-    <div class="card-content">
+      <div class="card-content">
       <div class="card-img-container">
-        <img 
-        class="citysc"
-        src="{% static 'images/cityscape.png' %}" 
-        alt="A cityscape"
-        >
       </div>
-        <h2 class="card-title">{{ place.name }}</h2>
+      <h2 class="card-title">{{ place.name }}</h2>
     </a>
     </div>
   {% endfor %}

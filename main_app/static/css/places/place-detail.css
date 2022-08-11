@@ -24,6 +24,13 @@
   margin-top: 20px;
 }
 
+.visits {
+  background-color: rgba(247, 247, 247, 0.65);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .visits-container {
   display: flex;
   flex-direction: column;
@@ -100,11 +107,17 @@
   border: var(--borders);
   border-radius: var(--card-border-radius);
   padding: 10px;
-  box-shadow: var(--card-box-shadow);
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
+}
+
+.subsection-title h1 {
+  font-size: large;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 .subsection-title img {
@@ -190,6 +203,45 @@
 .button-actions {
   display: flex;
   justify-content: center;
+}
+.todos-container {
+  width: 80%;
+  min-width: 360px;
+  border: var(--borders);
+  border-radius: var(--card-border-radius);
+  padding: 10px;
+  /* box-shadow: var(--card-box-shadow); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: rgba(165, 227, 235, 0.65);
+}
+
+.todos table {
+  width: calc(100% - 16px);
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 8px;
+}
+
+.todos td {
+  padding: 8px 5px;
+  font-size: var(--font-reg);
+}
+
+.todos th {
+  font-size: var(--font-l);
+  padding: 5px 5px 0;
+  border-bottom: rgb(36, 116, 248) solid 2px;
+}
+
+.todos tr:nth-child(even) {
+  background-color: #f3f3fd;
+}
+
+.btn.submit {
+  margin-bottom: 7px;
 }
 
 @media only screen and (min-width: 768px) {
