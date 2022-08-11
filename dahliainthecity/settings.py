@@ -136,6 +136,6 @@ LOGOUT_REDIRECT_URL = 'home'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
 
 DEBUG_PROPAGATE_EXCEPTIONS = True
+django_heroku.settings(locals())
