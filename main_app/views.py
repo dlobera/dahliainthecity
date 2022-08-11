@@ -53,7 +53,7 @@ def add_todo(request, place_id):
 
 class PlaceCreate(LoginRequiredMixin, CreateView):
   model = Place
-  fields = '__all__'
+  fields = ['name']
   success_url = '/places/'
   def form_valid(self, form):
     form.instance.user = self.request.user 
