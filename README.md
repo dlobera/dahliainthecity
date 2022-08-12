@@ -7,8 +7,11 @@
 [Click here to get a closer look at our Trello Planning Materials](https://trello.com/b/Vr7VNdWK/dahlia-in-the-city)
 
 ### ERD & Wireframe
-#### [Click here to get a closer look to the ERD and Wireframe](https://whimsical.com/dahlia-in-the-city-7mnSRs9pyuL7mDDEgUinWV)
+#### [Click here to get a closer look at the Wireframe](https://whimsical.com/dahlia-in-the-city-7mnSRs9pyuL7mDDEgUinWV)
 ![Wireframe](./main_app/static/images/wireframe.png)
+
+Click here to get a closer look at the ERD](https://lucid.app/lucidspark/bb7e96e4-df20-46c5-956c-5aa6e10ca66c/edit?viewport_loc=-1098%2C-627%2C3073%2C1479%2C0_0&invitationId=inv_bd96e427-a7a9-4803-bcfa-9a69c90c548a#)
+![Wireframe](./main_app/static/images/erd.png)
 
 
 ### Website Preview
