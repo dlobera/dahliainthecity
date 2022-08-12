@@ -28,13 +28,13 @@
 -I want to add an edit and delete function to the todo list.
 
 ## Credits 
--Favicon by Icons8.
--https://github.com/PrettyPrinted/django_todo_app.git
+- Favicon by Icons8.
+- https://github.com/PrettyPrinted/django_todo_app.git
 
 ## Special Thanks
--Coco
--Haydee
--Jonathan
--Brian
--Emily
--David
+- Coco
+- Haydee
+- Jonathan
+- Brian
+- Emily
+- David
