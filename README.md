@@ -1,9 +1,6 @@
 # dahliainthecity
 [Click here to get to the Deployed Link](https://dahliainthecity.herokuapp.com/)
 
-## Github
-
-[Click here to get to the Back-End Github](https://github.com/dlobera/dahliainthecity.git)
 
 ## Planning  
 
