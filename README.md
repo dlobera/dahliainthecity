@@ -8,12 +8,11 @@
 
 ### ERD & Wireframe
 #### [Click here to get a closer look to the ERD and Wireframe](https://whimsical.com/dahlia-in-the-city-7mnSRs9pyuL7mDDEgUinWV)
-<!-- ![ERD](./public/images/ERD.png) -->
 ![Wireframe](./main_app/static/images/wireframe.png)
 
 
 ### Website Preview
-![Landing Page](./main_app/static/images/final.png)
+![Home Page](./main_app/static/images/final.png)
 
 ## Technologies Used:
 -Python
