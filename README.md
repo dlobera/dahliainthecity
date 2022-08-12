@@ -24,8 +24,8 @@
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
 ## Next Steps
--I want to allow users to only delete their own posts.
--I want to add an edit and delete function to the todo list.
+- I want to allow users to only delete their own posts.
+- I want to add an edit and delete function to the todo list.
 
 ## Credits 
 - Favicon by Icons8.
